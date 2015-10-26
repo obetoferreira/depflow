@@ -1,0 +1,17 @@
+default=(	
+	"port:22" 
+	"usr:obetoferreira" 
+	"host:gilbertoferreira.com" 
+	"fldr:depflow" 
+	"repo:git@github.com:obetoferreira/depflow.git" 
+	"branch:staging"
+)
+
+production=(
+	"port:22" 
+	"usr:obetoferreira" 
+	"host:gilbertoferreira.com" 
+	"fldr:depflow" 
+	"repo:git@github.com:obetoferreira/depflow.git" 
+	"branch:master"
+)
