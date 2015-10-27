@@ -2,6 +2,12 @@
 
 A simple GIT deployment workflow written in Shell Script.
 
+## Dependencies
+
+* GIT (Installed local and remote server)
+* SSH access passwordless
+* Bash >= 3
+
 ## Quick start
 
 1. Prepare your local, server and bitbucket/github ssh permissions.
@@ -10,7 +16,7 @@ A simple GIT deployment workflow written in Shell Script.
 
 ## Features
 
-* Bash v3+;
+* Bash 3+;
 * Deploy with Git and SSH;
 * Multiple environments.
 
@@ -21,4 +27,4 @@ A simple GIT deployment workflow written in Shell Script.
 3. Run `depflow init` to clone the entire repo into your server
 4. Run `depflow [environment]` to deploy the changes
 
-*Note: You must have SSH permissions in your server and github/bitbucket. [See more](https://www.siteground.com/tutorials/ssh/ssh_cpanel.htm).*
+*Note: You must have SSH permissions in your server and github/bitbucket. [See more](http://www.tecmint.com/ssh-passwordless-login-using-ssh-keygen-in-5-easy-steps/).*
