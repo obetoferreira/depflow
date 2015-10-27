@@ -12,9 +12,17 @@ else
 	else
 		environment=$1;
 	fi
-	source .depflowconfig;
 	# git pull in the server
 	echo 'Initializing deploy...';
-	ssh -p ${environment[port]} ${environment[usr]}@${environment[host]} "cd 'public_html/${environment[fldr]}' && git checkout ${environment[branch]} && git pull origin ${environment[branch]}";
+	source .depflowconfig;
+
+	# using passed argument to get access info
+	eval access_port=\${$environment[0]#*:};
+	eval access_user=\${$environment[1]#*:};
+	eval access_host=\${$environment[2]#*:};
+	eval access_path=\${$environment[3]#*:};
+	eval access_branch=\${$environment[5]#*:};
+
+	ssh -p $access_port $access_user@$access_host "cd 'public_html/$access_path' && git checkout $access_branch && git pull origin $access_branch";
 	echo 'Done.';
 fi
