@@ -1,11 +1,12 @@
-# Git clone on the server
-echo 'Cloning repository into server...';
-source .depflowconfig;
-
-access_port=${default[0]#*:};
-access_user=${default[1]#*:};
-access_host=${default[2]#*:};
-access_repo=${default[4]#*:};
-
-ssh -p $access_port $access_user@$access_host "cd public_html && git clone $access_repo";
-echo 'Done.';
+# Creates .depflowconfig file
+echo 'Creating .depflowconfig file...';
+touch .depflowconfig;
+echo 'default=(	
+	"port:55851" 
+	"usr:hquartel" 
+	"host:quarteldesign.com" 
+	"fldr:<insert-folder-name-here>" 
+	"repo:<insert-repo-url-here>" 
+	"branch:staging"
+)' > .depflowconfig;
+echo "Done. Don't forget to fill the .depflowconfig file with your info.";
